@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
   get '/tour', to: "pages#tour"
   get '/gladiator', to: "pages#gladiator"
+  get '/ranklist', to: "pages#ranklist"
 
   root to: 'pages#home'
 end

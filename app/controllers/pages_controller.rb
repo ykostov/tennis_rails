@@ -10,7 +10,10 @@ class PagesController < ApplicationController
 
   def gladiator
   end
-  
+
+  def ranklist
+  end
+
   def help
   end
 end
