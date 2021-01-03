@@ -11,6 +11,9 @@ class PagesController < ApplicationController
   def gladiator
   end
 
+  def admin
+  end
+
   def ranklist
   end
 
