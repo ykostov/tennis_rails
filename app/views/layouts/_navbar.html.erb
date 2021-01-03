@@ -13,6 +13,20 @@
   </div>
 
   <div class="topnav-right">
+
+    <% if current_admin  %>
+
+    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
+
+    <% else %>
+
+    <%= link_to 'Register', new_admin_registration_path %>
+    <%= link_to 'Sign In', new_admin_session_path %>
+
+    <% end %>
+
+
+
   </div>
 
   <%= link_to 'Admin', admin_path %>
