@@ -21,8 +21,8 @@
 </p>
 
 <p>
-  <strong>Admin:</strong>
-  <%= @competition.admin_id %>
+  <strong>Modified by:</strong>
+  <%= @competition.admin.email.split('@')[0].capitalize %>
 </p>
 
 <%= link_to 'Edit', edit_competition_path(@competition) %> |

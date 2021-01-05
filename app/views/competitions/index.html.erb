@@ -9,7 +9,7 @@
       <th>Date</th>
       <th>Time</th>
       <th>Info</th>
-      <th>Admin</th>
+      <th>Modified by:</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,7 +21,7 @@
         <td><%= competition.date %></td>
         <td><%= competition.time %></td>
         <td><%= competition.info %></td>
-        <td><%= competition.admin_id %></td>
+        <td><%= competition.admin.email.split('@')[0].capitalize %></td>
         <td><%= link_to 'Show', competition %></td>
         <td><%= link_to 'Edit', edit_competition_path(competition) %></td>
         <td><%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
