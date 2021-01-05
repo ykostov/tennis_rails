@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :competitions
   resources :posts
   devise_for :admins
   get 'pages/home'
