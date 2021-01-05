@@ -7,9 +7,6 @@ class PagesController < ApplicationController
   def about
   end
 
-  def tour
-  end
-
   def gladiator
   end
 
