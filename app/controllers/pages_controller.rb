@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :authenticate_admin!, except: [:help, :about, :home]
+
   def home
   end
 
@@ -9,9 +11,6 @@ class PagesController < ApplicationController
   end
 
   def gladiator
-  end
-
-  def admin
   end
 
   def ranklist

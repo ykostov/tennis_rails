@@ -7,9 +7,26 @@
     </button>
     <div class="dropdown-content">
       <%= link_to 'Monthly Tournament', tour_path %>
+      <%= link_to 'Posts', posts_path %>
       <%= link_to 'Gladiator', gladiator_path %>
       <%= link_to 'Ranklist', ranklist_path %>
     </div>
   </div>
-  <%= link_to 'Admin', admin_path %>
+
+  <div class="topnav-right">
+
+    <% if current_admin  %>
+
+    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
+
+    <% else %>
+
+
+    <%= link_to 'Sign In', new_admin_session_path %>
+
+    <% end %>
+
+
+
+  </div>
 </div>

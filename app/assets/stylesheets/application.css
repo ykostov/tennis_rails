@@ -58,7 +58,9 @@
   display: block;
 }
 
-
+.topnav-right {
+  float: right;
+}
 
 /* LOGIN FORM */
 
