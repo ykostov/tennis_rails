@@ -1,6 +1,6 @@
 class CompetitionsController < ApplicationController
   before_action :set_competition, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, except: [:show, :index]
   # GET /competitions
   # GET /competitions.json
   def index
@@ -25,7 +25,7 @@ class CompetitionsController < ApplicationController
   # POST /competitions.json
   def create
     @competition = Competition.new(competition_params)
-
+    @competition.admin = current_admin
     respond_to do |format|
       if @competition.save
         format.html { redirect_to @competition, notice: 'Competition was successfully created.' }
@@ -69,6 +69,6 @@ class CompetitionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def competition_params
-      params.require(:competition).permit(:title, :date, :time, :info, :admin_id)
+      params.require(:competition).permit(:title, :date, :time, :info)
     end
 end
