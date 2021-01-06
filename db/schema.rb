@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_193116) do
+ActiveRecord::Schema.define(version: 2021_01_06_061918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,27 @@ ActiveRecord::Schema.define(version: 2021_01_05_193116) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "competitions", force: :cascade do |t|
+    t.string "title"
+    t.string "date"
+    t.integer "time"
+    t.text "info"
+    t.bigint "admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_competitions_on_admin_id"
+  end
+
+  create_table "gladiators", force: :cascade do |t|
+    t.string "title"
+    t.datetime "start_date"
+    t.text "info"
+    t.bigint "admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_gladiators_on_admin_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -69,6 +90,8 @@ ActiveRecord::Schema.define(version: 2021_01_05_193116) do
     t.index ["admin_id"], name: "index_tours_on_admin_id"
   end
 
+  add_foreign_key "competitions", "admins"
+  add_foreign_key "gladiators", "admins"
   add_foreign_key "posts", "admins"
   add_foreign_key "tournaments", "admins"
   add_foreign_key "tours", "admins"
