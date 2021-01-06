@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gladiator.title %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @gladiator.start_date %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @gladiator.info %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @gladiator.admin.email.split('@')[0].capitalize %>
+</p>
+
+<%= link_to 'Edit', edit_gladiator_path(@gladiator) %> |
+<%= link_to 'Back', gladiators_path %>

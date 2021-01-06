@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gladiators
   resources :competitions
   resources :posts
   devise_for :admins

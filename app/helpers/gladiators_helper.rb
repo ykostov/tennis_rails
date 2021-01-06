@@ -1,0 +1,2 @@
+module GladiatorsHelper
+end
