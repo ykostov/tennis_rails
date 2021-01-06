@@ -25,7 +25,7 @@ class GladiatorsController < ApplicationController
   # POST /gladiators.json
   def create
     @gladiator = Gladiator.new(gladiator_params)
-    @competition.admin = current_admin
+    @gladiator.admin = current_admin
     respond_to do |format|
       if @gladiator.save
         format.html { redirect_to @gladiator, notice: 'Gladiator was successfully created.' }
