@@ -1,22 +1,4 @@
-@import 'theme_color';
-@import 'fonts';
-@import 'mixin';
-@import 'responsive';
 
-/* [Core Stylesheet - 1.0] */
-
-/* :: 1.0 Import Fonts */
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700');
-
-/* :: 2.0 Import All CSS */
-
-@import 'css/bootstrap.min.css';
-@import 'css/classy-nav.css';
-@import 'css/owl.carousel.min.css';
-@import 'css/animate.css';
-@import 'css/font-awesome.min.css';
-@import 'css/credit-icon.css';
 
 /* :: 3.0 Base CSS */
 
