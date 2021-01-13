@@ -9,11 +9,11 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
-import("active.js")
-import("plugins.js")
-import("bootstrap.min.js")
-import("jquery-2.2.4.min.js")
-import("popper.min.js")
+import("packs/active.js")
+import("packs/plugins.js")
+import("packs/bootstrap.min.js")
+import("packs/jquery-2.2.4.min.js")
+import("packs/popper.min.js")
 
 
 Rails.start()
