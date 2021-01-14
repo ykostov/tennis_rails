@@ -2,6 +2,7 @@
   "name": "tennis",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -9,7 +10,8 @@
     "bootstrap": "4.3.1",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "wow": "^0.0.6"
   },
   "version": "0.1.0",
   "devDependencies": {
