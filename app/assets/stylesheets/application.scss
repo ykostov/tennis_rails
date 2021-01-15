@@ -4,3 +4,20 @@
 @import 'animate.css';
 @import 'credit-icon.css';
 @import 'owl.carousel.min.css';
+
+@media screen and (max-width: 1000px)
+{
+  .classy-menu
+  {
+    visibility: hidden;
+    display: none;
+  }
+
+  .contact
+  {
+    visibility: hidden;
+    display: none;
+  }
+
+
+}
