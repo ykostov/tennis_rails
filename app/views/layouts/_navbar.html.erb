@@ -1,31 +1,115 @@
-<div class="navbar">
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'About Us', about_path %>
-  <div class="dropdown">
-    <button class="dropbtn">Events
-      <!-- An Icon for the dropdown -->
-    </button>
-    <div class="dropdown-content">
-      <%= link_to 'Monthly Tournament', competitions_path %>
-      <%= link_to 'Gladiator', gladiators_path %>
-      <%= link_to 'Ranklist', ranklist_path %>
+<header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 d-flex justify-content-between">
+                    <!-- Logo Area -->
+                    <div class="logo">
+                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    </div>
+
+                    <!-- Top Contact Info -->
+                    <div class="top-contact-info d-flex align-items-center">
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="25 th Street Avenue, Los Angeles, CA"><img src="img/core-img/placeholder.png" alt=""> <span>25 th Street Avenue, Los Angeles, CA</span></a>
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="office@yourfirm.com"><img src="img/core-img/message.png" alt=""> <span>office@yourfirm.com</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="topnav-right">
+    <!-- Navbar Area -->
+    <div class="credit-main-menu" id="sticker">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                 <nav class="classy-navbar justify-content-between" id="creditNav">
 
-    <% if current_admin  %>
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
 
-    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
+                    <!-- Menu -->
+                    <div class="classy-menu">
 
-    <% else %>
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
 
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Pages</a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="post.html">Post</a></li>
+                                        <li><a href="single-post.html">Single Post</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="elements.html">Elements</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="#">Portfolio</a>
+                                    <div class="megamenu">
+                                        <ul class="single-mega cn-col-4">
+                                            <li><a href="#">Portfolio 1</a></li>
+                                            <li><a href="#">Portfolio 2</a></li>
+                                            <li><a href="#">Portfolio 3</a></li>
+                                            <li><a href="#">Portfolio 4</a></li>
+                                            <li><a href="#">Portfolio 5</a></li>
+                                            <li><a href="#">Portfolio 6</a></li>
+                                            <li><a href="#">Portfolio 7</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li><a href="#">Portfolio 8</a></li>
+                                            <li><a href="#">Portfolio 9</a></li>
+                                            <li><a href="#">Portfolio 10</a></li>
+                                            <li><a href="#">Portfolio 11</a></li>
+                                            <li><a href="#">Portfolio 12</a></li>
+                                            <li><a href="#">Portfolio 13</a></li>
+                                            <li><a href="#">Portfolio 14</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li><a href="#">Portfolio 15</a></li>
+                                            <li><a href="#">Portfolio 16</a></li>
+                                            <li><a href="#">Portfolio 17</a></li>
+                                            <li><a href="#">Portfolio 18</a></li>
+                                            <li><a href="#">Portfolio 19</a></li>
+                                            <li><a href="#">Portfolio 20</a></li>
+                                            <li><a href="#">Portfolio 21</a></li>
+                                        </ul>
+                                        <ul class="single-mega cn-col-4">
+                                            <li><a href="#">Portfolio 22</a></li>
+                                            <li><a href="#">Portfolio 23</a></li>
+                                            <li><a href="#">Portfolio 24</a></li>
+                                            <li><a href="#">Portfolio 25</a></li>
+                                            <li><a href="#">Portfolio 26</a></li>
+                                            <li><a href="#">Portfolio 27</a></li>
+                                            <li><a href="#">Portfolio 28</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li><a href="post.html">Blog</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
 
-    <%= link_to 'Sign In', new_admin_session_path %>
+                    <!-- Contact -->
+                    <div class="contact">
+                        <a href="#"><img src="img/core-img/call2.png" alt=""> +800 49 900 900</a>
+                    </div>
 
-    <% end %>
-
-
-
-  </div>
-</div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
