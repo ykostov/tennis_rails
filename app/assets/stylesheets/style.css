@@ -1597,37 +1597,36 @@ img {
 .contact-form-area textarea.form-control {
   height: 250px; }
 
-.map-area {
-  position: relative;
-  z-index: 2;
-  height: 960px; }
-  @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .map-area {
-      height: 1200px; } }
-  @media only screen and (max-width: 767px) {
-    .map-area {
-      height: 1200px; } }
-  .map-area iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    margin-bottom: 0; }
-  .map-area .contact---area {
+  .map-area {
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%); }
-    .map-area .contact---area .contact-page {
-      background-color: #003679;
-      padding: 70px 45px; }
-      @media only screen and (max-width: 767px) {
-        .map-area .contact---area .contact-page {
-          padding: 40px 30px; } }
-      .map-area .contact---area .contact-page h4 {
-        color: #ffffff;
-        font-weight: 600; }
+    height: 960px; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .map-area {
+        height: 1200px; } }
+    @media only screen and (max-width: 767px) {
+      .map-area {
+        height: 1200px; } }
+    .map-area iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin-bottom: 0; }
+    .map-area .contact---area {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+      .map-area .contact---area .contact-page {
+        background-color: #003679;
+        padding: 70px 45px; }
+        @media only screen and (max-width: 767px) {
+          .map-area .contact---area .contact-page {
+            padding: 40px 30px; } }
+        .map-area .contact---area .contact-page h4 {
+          color: #ffffff;
+          font-weight: 600; }
 
 /* :: 14.0 Elements Area CSS */
 .elements-title {
