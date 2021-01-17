@@ -2,7 +2,7 @@
 
 .container-table100 {
   width: 100%;
-  
+
 
 
 
@@ -150,22 +150,22 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
+    content: "Title";
   }
   table tbody tr td:nth-child(2):before {
-    content: "Order ID";
+    content: "Start Date";
   }
   table tbody tr td:nth-child(3):before {
-    content: "Name";
+    content: "Info";
   }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "Admin";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
+    content: "Edit";
   }
   table tbody tr td:nth-child(6):before {
-    content: "Total";
+    content: "Destroy";
   }
 
   .column4,
