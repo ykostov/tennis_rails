@@ -1,31 +1,66 @@
-<div class="navbar">
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'About Us', about_path %>
-  <div class="dropdown">
-    <button class="dropbtn">Events
-      <!-- An Icon for the dropdown -->
-    </button>
-    <div class="dropdown-content">
-      <%= link_to 'Monthly Tournament', competitions_path %>
-      <%= link_to 'Gladiator', gladiators_path %>
-      <%= link_to 'Ranklist', ranklist_path %>
+<header class="header-area">
+    <!-- Top Header Area -->
+    <div class="top-header-area">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 d-flex justify-content-between">
+                    <!-- Logo Area -->
+                    <div class="logo">
+                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                    </div>
+
+                    <!-- Top Contact Info -->
+                    <div class="top-contact-info d-flex align-items-center">
+                        <a href="#" data-toggle="tooltip" data-placement="bottom" title="Уеб Дизайн и изработка от BraTac.net"><img src="img/core-img/placeholder.png" alt=""> <span>Уеб Дизайн и изработка от BraTac.net</span></a>
+                        <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="office@yourfirm.com"><img src="img/core-img/message.png" alt=""> <span>office@yourfirm.com</span></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="topnav-right">
+    <!-- Navbar Area -->
+    <div class="credit-main-menu" id="sticker">
+        <div class="classy-nav-container breakpoint-off">
+            <div class="container">
+                <!-- Menu -->
+                 <nav class="classy-navbar justify-content-between" id="creditNav">
 
-    <% if current_admin  %>
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
 
-    <%= link_to 'Sign out', destroy_admin_session_path, method: :delete %>
+                    <!-- Menu -->
+                    <div class="classy-menu">
 
-    <% else %>
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
 
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li>  </li>
+                                <li>  <%= link_to 'Начална Страница', root_path %>  </li>
+                                <li>  <%= link_to 'Повече за нас', about_path %>  </li>
+                                <li>  <%= link_to 'Лига "Гладиатори"', gladiators_path %>  </li>
+                                <li>  <%= link_to 'Месечен Турнир', gladiators_path %>  </li>
+                                <li>  <%= link_to 'Ранглиста', gladiators_path %>  </li>
 
-    <%= link_to 'Sign In', new_admin_session_path %>
+                            </ul>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
 
-    <% end %>
+                    <!-- Contact -->
+                    <div class="contact">
+                        <a href="#"><img src="img/core-img/call2.png" alt=""> +359 886 460 005</a>
+                    </div>
 
-
-
-  </div>
-</div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
