@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?l52080');
-  src:  url('../fonts/icomoon.eot?l52080#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?l52080') format('truetype'),
-    url('../fonts/icomoon.woff?l52080') format('woff'),
-    url('../fonts/icomoon.svg?l52080#icomoon') format('svg');
+  src:  font-url('icomoon.eot?l52080');
+  src:  font-url('icomoon.eot?l52080#iefix') format('embedded-opentype'),
+  font-url('icomoon.ttf?l52080') format('truetype'),
+  font-url('icomoon.woff?l52080') format('woff'),
+  font-url('icomoon.svg?l52080#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -144,3 +144,4 @@
 .icon-coin:before {
   content: "\e927";
 }
+
