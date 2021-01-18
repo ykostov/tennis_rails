@@ -1,19 +1,19 @@
 <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(img/bg-img/13.jpg);">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <div class="breadcrumb-content">
-                    <h2>Gladiators</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">About Us</li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12">
+        <div class="breadcrumb-content">
+          <h2>Gladiators</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">About Us</li>
+            </ol>
+          </nav>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <p id="notice"><%= notice %></p>
@@ -26,37 +26,35 @@
     <div class="wrap-table100">
       <div class="table100">
 
-<table>
-  <thead>
-    <tr class="table100-head">
-        <th class="column1">Title</th>
-        <th class="column2">Start date</th>
-        <th class="column3">Info</th>
-        <th class="column4">Admin</th>
-        <th class="column5">Edit</th>
-        <th class="column6">Destroy</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <table>
+          <thead>
+            <tr class="table100-head">
+              <th class="column1">Tour name</th>
+              <th class="column2">Start date</th>
+              <th class='column3'></th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-  <tbody>
-    <% @gladiators.each do |gladiator| %>
-      <tr>
-          <td class="column1"><%= gladiator.title %></td>
-          <td class="column2"><%= gladiator.start_date %></td>
-          <td class="column3"><%= gladiator.info %></td>
-          <td class="column4"><%= gladiator.admin.email.split('@')[0].capitalize %></td>
-          <td class="column5"><%= link_to 'Edit', edit_gladiator_path(gladiator) %></td>
-          <td class="column6"><%= link_to 'Destroy', gladiator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <tbody>
+            <% @gladiators.each do |gladiator| %>
+              <tr>
+                <td class="column1"><%= link_to gladiator.title, gladiator %></td>
+                <td class="column2"><%= gladiator.start_date.strftime('%d-%b-%Y') %></td>
+                <%- if admin_signed_in? %>
+                  <td class='column3'><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<%= link_to 'New Gladiator', new_gladiator_path %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+        <%- if admin_signed_in? %>
+          <%= link_to 'New Gladiator', new_gladiator_path %>
+        <% end %>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </div>
