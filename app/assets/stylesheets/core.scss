@@ -11,3 +11,19 @@
    margin: 4px 2px;
    cursor: pointer;
 }
+
+.about-info
+{
+  text-align: center;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 1000px)
+  {
+    .call-number
+    {
+      visibility: hidden;
+      display: none;
+    }
+    
+  }
