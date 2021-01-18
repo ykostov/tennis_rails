@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mesecen_tours
   resources :gladiators
   resources :competitions
   resources :posts

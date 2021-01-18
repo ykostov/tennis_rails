@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @mesecen_tour.title %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @mesecen_tour.info %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @mesecen_tour.start_date %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @mesecen_tour.admin_id %>
+</p>
+
+<%= link_to 'Edit', edit_mesecen_tour_path(@mesecen_tour) %> |
+<%= link_to 'Back', mesecen_tours_path %>
