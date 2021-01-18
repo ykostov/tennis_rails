@@ -7,12 +7,4 @@ class PagesController < ApplicationController
   def about
   end
 
-  def gladiator
-  end
-
-  def ranklist
-  end
-
-  def help
-  end
 end
