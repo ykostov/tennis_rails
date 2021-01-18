@@ -27,7 +27,7 @@
         <td class="column1"><%= mesecen_tour.title %></td>
         <td class="column2"><%= mesecen_tour.info %></td>
         <td class="column3"><%= mesecen_tour.start_date %></td>
-        <td class="column4"><%= mesecen_tour.admin_id %></td>
+        <td class="column4"><%= mesecen_tour.admin.email.split('@')[0].capitalize %></td>
         <td class="column5"><%= link_to 'Edit', edit_mesecen_tour_path(mesecen_tour) %></td>
         <td class="column6"><%= link_to 'Destroy', mesecen_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

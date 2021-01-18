@@ -1,6 +1,6 @@
 class MesecenToursController < ApplicationController
   before_action :set_mesecen_tour, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_admin!, except: [:show, :index]
   # GET /mesecen_tours
   # GET /mesecen_tours.json
   def index
@@ -25,7 +25,7 @@ class MesecenToursController < ApplicationController
   # POST /mesecen_tours.json
   def create
     @mesecen_tour = MesecenTour.new(mesecen_tour_params)
-
+    @mesecen_tour.admin =  current_admin
     respond_to do |format|
       if @mesecen_tour.save
         format.html { redirect_to @mesecen_tour, notice: 'Mesecen tour was successfully created.' }
@@ -69,6 +69,6 @@ class MesecenToursController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mesecen_tour_params
-      params.require(:mesecen_tour).permit(:title, :info, :start_date, :admin_id)
+      params.require(:mesecen_tour).permit(:title, :info, :start_date)
     end
 end
