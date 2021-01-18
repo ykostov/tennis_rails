@@ -10,6 +10,7 @@
    font-size: 16px;
    margin: 4px 2px;
    cursor: pointer;
+   border-radius: 50px;
 }
 
 .about-info
@@ -18,12 +19,24 @@
   font-weight: normal;
 }
 
+.league
+{
+  background-color: #008CBA;
+  border-radius: 50px;
+}
+
+.footer-call
+{
+  border-radius: 50px;
+}
+
 @media screen and (min-width: 1000px)
   {
     .call-number
     {
       visibility: hidden;
       display: none;
+
     }
-    
+
   }
