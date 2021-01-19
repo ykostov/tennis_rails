@@ -43,7 +43,7 @@
                         <div class="classynav">
                             <ul>
                                 <li>  </li>
-                                <li>  <%= link_to 'Начална Страница', root_path %>  </li>
+                                <li>  <%= link_to 'Начало', root_path %>  </li>
                                 <li>  <%= link_to 'Повече за нас', about_path %>  </li>
                                 <li>  <%= link_to 'Лига "Гладиатори"', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Месечен Турнир', gladiators_path %>  </li>
@@ -54,7 +54,7 @@
                         <!-- Nav End -->
                     </div>
 
-                    <!-- Contact -->
+                                        <!-- Contact -->
                     <div class="contact">
                         <a href="#"><img src="img/core-img/call2.png" alt=""> +359 886 460 005</a>
                     </div>
@@ -64,3 +64,41 @@
         </div>
     </div>
 </header>
+
+
+<div class="nav-mob">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#">Център за тенис на маса</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+<li class="nav-item active">
+<a class="nav-link"> <%= link_to 'Начална Страница', root_path %><span class="sr-only"></span></a>
+</li>
+<div class="dropdown-divider"></div>
+<li class="nav-item">
+<a class="nav-link"><%= link_to 'Повече за нас', about_path %></a>
+</li>
+<div class="dropdown-divider"></div>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Събития
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<a class="dropdown-item" href="#"><%= link_to 'Лига "Гладиатори"', gladiators_path %></a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#"><%= link_to 'Месечен Турнир', gladiators_path %></a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="#"><%= link_to 'Класиране"', gladiators_path %></a>
+</div>
+</li>
+
+</form>
+</div>
+</nav>
+
+</div>
