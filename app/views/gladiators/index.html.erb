@@ -30,9 +30,9 @@
 <table>
   <thead>
     <li class="table-header">
-      <div class="col col-1">Title</div>
-      <div class="col col-2">Start Date</div>
-      <div class="col col-3">View More</div>
+      <div class="col col-1">Заглавие</div>
+      <div class="col col-2">Кога започва?</div>
+      <div class="col col-3">Статус</div>
     </li>
   </thead>
 
@@ -48,7 +48,9 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'New Gladiator', new_gladiator_path %>
 
+<% if current_admin %>
+<button class="button-w3"><%= link_to 'Създай нов гладиатор', new_gladiator_path %></button>
+<% end %>
 </div>
 </div>
