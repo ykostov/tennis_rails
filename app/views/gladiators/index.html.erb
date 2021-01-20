@@ -39,9 +39,9 @@
   <tbody>
     <% @gladiators.each do |gladiator| %>
     <li class="table-row">
-      <div class="col col-1" data-label="Title"><%= gladiator.title %></div>
-      <div class="col col-2" data-label="Start Date"><%= gladiator.start_date %></div>
-      <div class="col col-3" data-label="More Info"><%= link_to 'Show', gladiator %></div>
+      <div class="col col-1" data-label="Title"><%= link_to gladiator.title, gladiator %></div>
+      <div class="col col-2" data-label="Start Date"><%= gladiator.start_date.strftime('%d-%b-%y') %></div>
+      <div class="col col-3" data-label="Status:"><%= gladiator.status %></div>
 
     </li>
     <% end %>
