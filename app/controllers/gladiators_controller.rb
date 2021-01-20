@@ -5,7 +5,7 @@ class GladiatorsController < ApplicationController
   # GET /gladiators.json
   def index
     @gladiators = Gladiator.all
-    Gladiator.order(:created_at)
+    Gladiator.order(:start_date)
   end
 
   # GET /gladiators/1
