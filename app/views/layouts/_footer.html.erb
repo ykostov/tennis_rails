@@ -34,7 +34,7 @@
 
 
                       <%- if current_admin %>
-                      <button class="button-w3"><%= link_to 'Излез', destroy_admin_session_path, method: :delete %> </button>
+                      <%= button_to "Log out", destroy_admin_session_path, method: :delete %>
                       <% else %>
                       <button class="button-w3"><%= link_to 'Логин', new_admin_session_path %> </button>
                       <% end %>
