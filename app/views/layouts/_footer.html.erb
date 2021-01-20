@@ -26,9 +26,19 @@
 
         <!-- Copywrite Area -->
         <div class="copywrite-area">
+
             <div class="container">
+
                 <div class="row">
                     <div class="col-12">
+
+
+                      <%- if current_admin %>
+                      <%= button_to "Log out", destroy_admin_session_path, method: :delete %>
+                      <% else %>
+                      <button class="button-w3"><%= link_to 'Логин', new_admin_session_path %> </button>
+                      <% end %>
+
                         <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
                             <!-- Footer Logo -->
                             <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>

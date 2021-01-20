@@ -33,6 +33,9 @@
       <div class="col col-1">Заглавие</div>
       <div class="col col-2">Кога започва?</div>
       <div class="col col-3">Статус</div>
+       <%- if admin_signed_in? %>
+      <div class="col col-4"> Админ </div>
+      <% end %>
     </li>
   </thead>
 
@@ -42,7 +45,9 @@
       <div class="col col-1" data-label="Title"><%= gladiator.title %></div>
       <div class="col col-2" data-label="Start Date"><%= gladiator.start_date %></div>
       <div class="col col-3" data-label="More Info"><%= link_to 'Show', gladiator %></div>
-
+       <%- if admin_signed_in? %>
+       <div class="col col-4" data-label="Admin"><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></div>
+       <% end %>
     </li>
     <% end %>
   </tbody>
