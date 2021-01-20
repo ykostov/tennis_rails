@@ -27,32 +27,32 @@
         <h5 class="gladiators-info">Лига "Гладитори" се провежда всеки уикенд на всяка седмица, с изключение на тази с "Месечния" ни турнир. <br>Вижте кога ще се провежда следващото събитие в таблицата по-долу, или скочете до Ранглистата ни, за да видите кой взима златото!</h5>
         <br>
         <h2> Сезон 2021 </h2>
-<table>
-  <thead>
-    <li class="table-header">
-      <div class="col col-1">Заглавие</div>
-      <div class="col col-2">Кога започва?</div>
-      <div class="col col-3">Статус</div>
-       <%- if admin_signed_in? %>
-      <div class="col col-4"> Админ </div>
-      <% end %>
-    </li>
-  </thead>
 
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Име на турнир:</th>
+      <th scope="col">Начална дата:</th>
+      <th scope="col">Статус:</th>
+      <%- if admin_signed_in? %>
+        <th scope="col"></th>
+      <% end %>
+    </tr>
+  </thead>
   <tbody>
-    <% @gladiators.each do |gladiator| %>
-    <li class="table-row">
-      <div class="col col-1" data-label="Title"><%= gladiator.title %></div>
-      <div class="col col-2" data-label="Start Date"><%= gladiator.start_date.strftime('%d-%b-%y') %></div>
-      <div class="col col-3" data-label="More Info"><%= gladiator.status %></div>
-       <%- if admin_signed_in? %>
-       <div class="col col-4" data-label="Admin">
-       <%= link_to 'Show', gladiator, class: 'btn btn-primary' %>
-       <%= link_to 'Edit', edit_gladiator_path(gladiator), class: 'btn btn-secondary' %>
-       <%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
-       </div>
-       <% end %>
-    </li>
+    <% @gladiators.each.with_index(1) do |gladiator, i| %>
+    <tr>
+      <th scope="row"><%= i %></th>
+      <td><%= link_to gladiator.title, gladiator %></td>
+      <td><%= gladiator.start_date.strftime("%d-%b-20%y  | %H:%Mч.") %></td>
+      <td><b><%= gladiator.status%></b></td>
+
+      <%- if admin_signed_in? %>
+        <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
