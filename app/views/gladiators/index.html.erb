@@ -47,7 +47,7 @@
       <th scope="row"><%= i %></th>
       <td><%= link_to gladiator.title, gladiator %></td>
       <td><%= gladiator.start_date.strftime("%d-%b-20%y  | %H:%Mч.") %></td>
-      <td><b><%= gladiator.status_finish%></b></td>
+      <td><b><%= gladiator.status%></b></td>
 
       <%- if admin_signed_in? %>
         <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
