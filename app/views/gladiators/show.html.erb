@@ -1,24 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @gladiator.title %>
-</p>
+  <div class='tour-details text-center'>
+    <h5>
+      <%= "Tournament #{@gladiator.title} starts at: #{@gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.')} (admin: #{@gladiator.admin.email})" %>
+    </h5>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @gladiator.start_date %>
-</p>
+    <%= link_to 'Edit', edit_gladiator_path(@gladiator), class: 'btn btn-primary' %>
 
-<p>
-  <strong>Info:</strong>
-  <%= @gladiator.info %>
-</p>
+    <p>
+    <strong>Description:</strong>
+    <%= @gladiator.info %>
+    </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @gladiator.admin.email.split('@')[0].capitalize %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_gladiator_path(@gladiator) %> |
-<%= link_to 'Back', gladiators_path %>
+  <div class='tour-enrollment text-center'>
+    <hr>
+    <div class="table-responsive">
+      <caption>Players enrolled</caption>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Player</th>
+            <th scope="col">Participaring?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%- @players.each.with_index(1) do |player, i| %>
+            <tr>
+              <th scope="row"><%= i %></th>
+              <td><%= player.name %></td>
+              <td>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <input type="checkbox" aria-label="Checkbox for following text input">
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

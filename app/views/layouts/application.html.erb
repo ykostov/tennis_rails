@@ -16,7 +16,9 @@
   <body>
     <%= render 'layouts/navbar' %>
     <%# <%= render 'layouts/alerts' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= render 'layouts/footer' %>
     <%= render 'layouts/cookies' %>
     </body>
