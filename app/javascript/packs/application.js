@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
+Rails.start()
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
@@ -24,6 +25,5 @@ document.addEventListener("turbolinks:load", function() {
 require("wow")
 import "@fortawesome/fontawesome-free/css/all"
 
-Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
