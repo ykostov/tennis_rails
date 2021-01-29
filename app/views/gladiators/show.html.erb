@@ -19,6 +19,14 @@
     <hr>
     <div class="table-responsive">
       <caption>Players enrolled</caption>
+      <%= bootstrap_form_for @gladiator do |f| %>
+        <%= f.collection_check_boxes(:player_ids, Player.all, :id, :name) do |b| %>
+          <%= b.check_box %>
+
+        <% end %>
+        <%= f.submit %>
+      <% end %>
+
       <table class="table">
         <thead>
           <tr>
@@ -33,13 +41,8 @@
               <th scope="row"><%= i %></th>
               <td><%= player.name %></td>
               <td>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <input type="checkbox" aria-label="Checkbox for following text input">
-                    </div>
-                  </div>
-                </div>
+                <%# <%= label_tag 'player' %>
+                <%= check_box_tag(:enrolled, value = '1', checked = false)  %>
               </td>
             </tr>
           <% end %>
