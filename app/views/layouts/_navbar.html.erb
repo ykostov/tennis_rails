@@ -44,7 +44,7 @@
                             <ul>
 
                                 <li>  <%= link_to 'Начало', root_path %>  </li>
-                                <li>  <%= link_to 'Повече за нас', about_path %>  </li>
+
                                 <li>  <%= link_to 'Лига "Гладиатори"', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Месечен Турнир', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Класиране', gladiators_path %>  </li>
@@ -97,6 +97,13 @@
     <li class="nav-item font-nav-link">
     <a class="nav-link"><%= link_to 'Класиране', gladiators_path %></a>
     </li>
+    <div class="dropdown-divider"></div>
+    <% if admin_signed_in? %>
+      <li class="nav-item font-nav-link">
+        <%= link_to 'Players', players_path %>
+      </li>
+
+      <% end %>
 
 
     </ul>
