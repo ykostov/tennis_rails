@@ -17,37 +17,18 @@
 
   <div class='tour-enrollment text-center'>
     <hr>
-    <div class="table-responsive">
-      <caption>Players enrolled</caption>
+    <div class="table">
+      <h3>
+        <caption><%="Players enrolled: #{@gladiator.players.count}" %></caption>
+      </h3>
       <%= bootstrap_form_for @gladiator do |f| %>
-        <%= f.collection_check_boxes(:player_ids, Player.all, :id, :name) do |b| %>
+        <%= f.collection_check_boxes(:player_ids, @players, :id, :name, custom: :switch) do |b| %>
           <%= b.check_box %>
 
         <% end %>
         <%= f.submit %>
       <% end %>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Player</th>
-            <th scope="col">Participaring?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <%- @players.each.with_index(1) do |player, i| %>
-            <tr>
-              <th scope="row"><%= i %></th>
-              <td><%= player.name %></td>
-              <td>
-                <%# <%= label_tag 'player' %>
-                <%= check_box_tag(:enrolled, value = '1', checked = false)  %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
     </div>
   </div>
 </div>
