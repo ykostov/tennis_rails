@@ -22,6 +22,13 @@ document.addEventListener("turbolinks:load", function() {
   })
 })
 
+plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
+],
 require("wow")
 import "@fortawesome/fontawesome-free/css/all"
 
