@@ -47,7 +47,7 @@
 
                                 <li>  <%= link_to 'Лига "Гладиатори"', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Месечен Турнир', gladiators_path %>  </li>
-                                <li>  <%= link_to 'Класиране', gladiators_path %>  </li>
+                                <li>  <a href="/ranking">Класиране </a>  </li>
                                 <% if admin_signed_in? %>
                                   <li>  <%= link_to 'Players', players_path %></li>
                                   <% end %>
