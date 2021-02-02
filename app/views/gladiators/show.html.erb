@@ -6,7 +6,9 @@
       <%= "Tournament #{@gladiator.title} starts at: #{@gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.')} (admin: #{@gladiator.admin.email})" %>
     </h5>
 
-    <%= link_to 'Edit', edit_gladiator_path(@gladiator), class: 'btn btn-primary' %>
+    <%- if admin_signed_in? %>
+      <%= link_to 'Edit', edit_gladiator_path(@gladiator), class: 'btn btn-primary' %>
+    <% end %>
 
     <p>
     <strong>Description:</strong>
@@ -21,12 +23,36 @@
       <h3>
         <caption><%="Players enrolled: #{@gladiator.players.count}" %></caption>
       </h3>
-      <%= bootstrap_form_for @gladiator do |f| %>
-        <%= f.collection_check_boxes(:player_ids, @players, :id, :name, custom: :switch) do |b| %>
-          <%= b.check_box %>
-
+      <%= form_for @gladiator do |f| %>
+        <table class="table table-responsive table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Player:</th>
+              <th>Enrolled?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- if admin_signed_in? %>
+              <%= f.collection_check_boxes :player_ids, @players, :id, :name, custom: :switch  do |b| %>
+                <tr>
+                  <td><%= b.label %></td>
+                  <td><%= b.check_box %></td>
+                </tr>
+              <% end %>
+            <% end %>
+            <%- unless admin_signed_in? %>
+              <% @gladiator.players.each do |player| %>
+                <tr>
+                  <td><%= player.name %></td>
+                  <td>Enrolled</td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+        <%- if admin_signed_in? %>
+          <%= f.submit %>
         <% end %>
-        <%= f.submit %>
       <% end %>
 
     </div>
