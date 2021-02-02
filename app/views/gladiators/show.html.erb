@@ -24,7 +24,7 @@
         <caption><%="Players enrolled: #{@gladiator.players.count}" %></caption>
       </h3>
       <%= form_for @gladiator do |f| %>
-        <table class="table table-responsive table-striped">
+        <table class="table table-striped">
           <thead class="thead-dark">
             <tr>
               <th>Player:</th>
@@ -51,7 +51,9 @@
           </tbody>
         </table>
         <%- if admin_signed_in? %>
-          <%= f.submit %>
+          <div class="form-actions">
+            <%= f.submit %>
+          </div>
         <% end %>
       <% end %>
 
