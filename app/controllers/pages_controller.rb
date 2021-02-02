@@ -7,4 +7,11 @@ class PagesController < ApplicationController
   def about
   end
 
+  def ranking
+
+    @players = Player.all
+    @gladiators = Gladiator.all
+
+  end
+
 end
