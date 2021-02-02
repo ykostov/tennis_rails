@@ -1,24 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @gladiator.title %>
-</p>
+  <div class='tour-details text-center'>
+    <h5>
+      <%= "Tournament #{@gladiator.title} starts at: #{@gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.')} (admin: #{@gladiator.admin.email})" %>
+    </h5>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @gladiator.start_date %>
-</p>
+    <%- if admin_signed_in? %>
+      <%= link_to 'Edit', edit_gladiator_path(@gladiator), class: 'btn btn-primary' %>
+    <% end %>
 
-<p>
-  <strong>Info:</strong>
-  <%= @gladiator.info %>
-</p>
+    <p>
+    <strong>Description:</strong>
+    <%= @gladiator.info %>
+    </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @gladiator.admin.email.split('@')[0].capitalize %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_gladiator_path(@gladiator) %> |
-<%= link_to 'Back', gladiators_path %>
+  <div class='tour-enrollment text-center'>
+    <hr>
+    <div class="table">
+      <h3>
+        <caption><%="Players enrolled: #{@gladiator.players.count}" %></caption>
+      </h3>
+      <%= form_for @gladiator do |f| %>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Player:</th>
+              <th>Enrolled?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%- if admin_signed_in? %>
+              <%= f.collection_check_boxes :player_ids, @players, :id, :name, custom: :switch  do |b| %>
+                <tr>
+                  <td><%= b.label %></td>
+                  <td><%= b.check_box %></td>
+                </tr>
+              <% end %>
+            <% end %>
+            <%- unless admin_signed_in? %>
+              <% @gladiator.players.each do |player| %>
+                <tr>
+                  <td><%= player.name %></td>
+                  <td>Enrolled</td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+        <%- if admin_signed_in? %>
+          <div class="form-actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -4,13 +4,13 @@ class GladiatorsController < ApplicationController
   # GET /gladiators
   # GET /gladiators.json
   def index
-    @gladiators = Gladiator.all
-    Gladiator.order(:start_date)
+    @gladiators = Gladiator.order(:start_date)
   end
 
   # GET /gladiators/1
   # GET /gladiators/1.json
   def show
+    @players = Player.all
   end
 
   # GET /gladiators/new
@@ -41,6 +41,7 @@ class GladiatorsController < ApplicationController
   # PATCH/PUT /gladiators/1
   # PATCH/PUT /gladiators/1.json
   def update
+    @players = Player.where(activated: true)
     respond_to do |format|
       if @gladiator.update(gladiator_params)
         format.html { redirect_to @gladiator, notice: 'Gladiator was successfully updated.' }
@@ -70,6 +71,6 @@ class GladiatorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gladiator_params
-      params.require(:gladiator).permit(:title, :start_date, :info)
+      params.require(:gladiator).permit(:title, :start_date, :info, player_ids: [])
     end
 end

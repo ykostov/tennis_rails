@@ -1,5 +1,5 @@
 
-    <section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(tour2.jpg);">
+<section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(<%= asset_path 'tour2.jpg' %>);">
 
         <div class="container">
             <div class="row justify-content-center">
@@ -34,14 +34,14 @@
 
 
                       <%- if current_admin %>
-                      <%= button_to "Log out", destroy_admin_session_path, method: :delete %>
+                      <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
                       <% else %>
-                      <button class="button-w3"><%= link_to 'Логин', new_admin_session_path %> </button>
+                      <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
                       <% end %>
 
                         <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
                             <!-- Footer Logo -->
-                            <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+                            <!-- <a href="index.html" class="footer&#45;logo"><img src="img/core&#45;img/logo.png" alt=""></a> -->
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="https://bratac.net" target="_blank">©2021 Copyright Bratac | All Rights Reserved!</a></p>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
                             <!-- Footer Logo -->
-                            <a href="index.html" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+                            <!-- <a href="index.html" class="footer&#45;logo"><img src="img/core&#45;img/logo.png" alt=""></a> -->
 
                             <!-- Copywrite Text -->
                             <p class="copywrite-text"><a href="https://bratac.net" target="_blank"> Web Design and Code by Bratac.net</a></p>

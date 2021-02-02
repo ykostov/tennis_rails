@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Players</h1>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Nickname</th>
+      <th scope="col">Email</th>
+      <th scope="col">Active?</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each.with_index(1) do |player, i| %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= link_to player.name, player %></td>
+        <td><%= player.nickname %></td>
+        <td><%= player.email %></td>
+        <td><%= player.activated %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if admin_signed_in? %>
+  <%= link_to 'New Player', new_player_path, class: 'btn btn-success' %>
+<% end %>

@@ -6,12 +6,12 @@
                 <div class="col-12 d-flex justify-content-between">
                     <!-- Logo Area -->
                     <div class="logo">
-                        <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+                        <!-- <a href="index.html"><img src="img/core&#45;img/logo.png" alt=""></a> -->
                     </div>
 
                     <!-- Top Contact Info -->
                     <div class="top-contact-info d-flex align-items-center">
-                        <a href="https://bratac.net" target='_blank' data-toggle="tooltip" data-placement="bottom" title="Уеб Дизайн, изработка и код от BraTac.net"><img src="img/core-img/placeholder.png" alt=""> <span>Уеб Дизайн, изработка и код от BraTac.net</span></a>
+                        <a href="https://bratac.net" target='_blank' data-toggle="tooltip" data-placement="bottom" title="Уеб Дизайн, изработка и код от BraTac.net"><span>Уеб Дизайн, изработка и код от BraTac.net</span></a>
                         <!-- <a href="#" data-toggle="tooltip" data-placement="bottom" title="office@yourfirm.com"><img src="img/core-img/message.png" alt=""> <span>office@yourfirm.com</span></a> -->
                     </div>
                 </div>
@@ -44,10 +44,13 @@
                             <ul>
 
                                 <li>  <%= link_to 'Начало', root_path %>  </li>
-                                <li>  <%= link_to 'Повече за нас', about_path %>  </li>
+
                                 <li>  <%= link_to 'Лига "Гладиатори"', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Месечен Турнир', gladiators_path %>  </li>
                                 <li>  <%= link_to 'Класиране', gladiators_path %>  </li>
+                                <% if admin_signed_in? %>
+                                  <li>  <%= link_to 'Players', players_path %></li>
+                                  <% end %>
 
                             </ul>
                         </div>
@@ -66,39 +69,46 @@
 </header>
 
 
-<div class="nav-mob">
+    <div class="nav-mob">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand"><%= link_to 'Център за тенис на маса', root_path %></a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-static-top"> -->
+      <nav class="navbar navbar-expand-md navbar-light bg-info fixed-top font-navbar">
+    <a class="navbar-brand text"><%= link_to 'TennisBurgas.com', root_path %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav mr-auto">
-<li class="nav-item active">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
 
-</li>
-<div class="dropdown-divider"></div>
-<li class="nav-item">
-<a class="nav-link"><%= link_to 'Повече за нас', about_path %></a>
-</li>
-<div class="dropdown-divider"></div>
-<li class="nav-item">
-<a class="nav-link"><%= link_to 'Лига "Гладиатори"', gladiators_path %></a>
-</li>
-<div class="dropdown-divider"></div>
-<li class="nav-item">
-<a class="nav-link"><%= link_to 'Месечен Турнир', gladiators_path %></a>
-</li>
-<div class="dropdown-divider"></div>
-<li class="nav-item">
-<a class="nav-link"><%= link_to 'Класиране', gladiators_path %></a>
-</li>
+    </li>
 
 
-</form>
-</div>
-</nav>
+    <div class="dropdown-divider"></div>
+    <li class="nav-item font-nav-link">
+    <a class="nav-link"><%= link_to 'Лига "Гладиатори"', gladiators_path %></a>
+    </li>
+    <div class="dropdown-divider"></div>
+    <li class="nav-item font-nav-link">
+    <a class="nav-link"><%= link_to 'Месечен Турнир', gladiators_path %></a>
+    </li>
+    <div class="dropdown-divider"></div>
+    <li class="nav-item font-nav-link">
+    <a class="nav-link"><%= link_to 'Класиране', gladiators_path %></a>
+    </li>
+    <div class="dropdown-divider"></div>
+    <% if admin_signed_in? %>
+      <li class="nav-item font-nav-link">
+        <%= link_to 'Players', players_path %>
+      </li>
 
-</div>
+      <% end %>
+
+
+    </ul>
+    </div>
+
+    </nav>
+
+    </div>
