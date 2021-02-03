@@ -2,6 +2,7 @@ class Gladiator < ApplicationRecord
   belongs_to :admin
   has_many :players_in_tour
   has_many :players, through: :players_in_tour
+  has_many :points
 
   def status
     return 'В игра....' if start_date == Date.today
