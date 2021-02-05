@@ -1,11 +1,29 @@
 @import 'bootstrap/scss/bootstrap';
 @import "rails_bootstrap_forms";
-@import "style.css";
-@import 'classy-nav.css';
-@import 'animate.css';
-@import 'icomoon.css';
-@import 'owl.carousel.min.css';
-@import 'table-design';
-@import 'core';
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+// @import "style.css";
+// @import 'classy-nav.css';
+// @import 'animate.css';
+// @import 'icomoon.css';
+// @import 'owl.carousel.min.css';
+// @import 'table-design';
+// @import 'core';
+// @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+// New Template
+// @import 'animate.css';
+// @import 'flexslider.css';
+// @import 'iconmoon0.css';
+// @import 'magnific-popup.css';
+// @import 'owl0-carousel.min.css';
+// @import 'owl.theme.default.min.css';
+// @import 'style0.css';
+
+@import 'design/css/animate.css';
+@import 'design/css/bootstrap.css';
+@import 'design/css/flexislider.css';
+@import 'design/css/icomoon.css';
+@import 'design/css/magnific-popup.css';
+@import 'design/css/owl-carousel.min.css';
+@import 'design/css/owl.theme.default.min.css';
+@import 'design/css/style.css';

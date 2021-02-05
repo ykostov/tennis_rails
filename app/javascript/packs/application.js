@@ -10,8 +10,22 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 
-import("packs/active.js")
-import("packs/plugins.js")
+// import("packs/active.js")
+
+
+
+import("design/jquery.easing.1.3.js")
+import("design/jquery.magnific-popup.min.js")
+import("design/jquery.js")
+import("design/jquery.waypoints.min.js")
+
+// Main
+import("design/main.js")
+// </ Main
+
+
+
+// import("packs/plugins.js")
 
 require("jquery")
 require("bootstrap")
