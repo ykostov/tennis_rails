@@ -10,16 +10,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'footer', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'main' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <%# <%= render 'layouts/navbar' %>
     <%# <%= render 'layouts/alerts' %>
 
     <%= yield %>
 
-    <%= render 'layouts/footer' %>
-    <%= render 'layouts/cookies' %>
+    <%# <%= render 'layouts/footer' %>
+    <%# <%= render 'layouts/cookies' %>
     </body>
 </html>

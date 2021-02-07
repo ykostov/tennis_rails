@@ -22,7 +22,6 @@ document.addEventListener("turbolinks:load", function() {
   })
 })
 
-require("wow")
 import "@fortawesome/fontawesome-free/css/all"
 
 Turbolinks.start()
