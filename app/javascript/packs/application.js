@@ -11,7 +11,7 @@ import "channels"
 
 
 import("packs/active.js")
-import("packs/plugins.js")
+
 
 require("jquery")
 require("bootstrap")
