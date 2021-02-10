@@ -14,12 +14,14 @@
   </head>
 
   <body>
-    <%# render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' %>
     <%# <%= render 'layouts/alerts' %>
+    <main id="main">
 
-    <%= yield %>
+      <%= yield %>
 
-    <%# render 'layouts/footer' %>
+    </main>
+    <%= render 'layouts/footer' %>
     <%= render 'layouts/cookies' %>
     </body>
 </html>

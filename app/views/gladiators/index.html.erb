@@ -1,65 +1,65 @@
-<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(<%= asset_path 'tour2.jpg' %>);">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12">
-        <div class="breadcrumb-content">
+
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="breadcrumb-hero">
+      <div class="container">
+        <div class="breadcrumb-hero">
           <h2>Лига "Гладиатори"</h2>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"> <%=link_to 'Начало', root_path %></li>
-              <li class="breadcrumb-item active" aria-current="page">Gladiators</li>
-            </ol>
-          </nav>
+          <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Services</li>
+      </ol>
+    </div>
+  </section>
 
-<p id="notice"><%= notice %></p>
-
-
-
-
-<div class="limiter">
-  <div class="container">
-    <ul class="responsive-table">
-      <h5 class="gladiators-info">Лига "Гладитори" се провежда всеки уикенд на всяка седмица, с изключение на тази с "Месечния" ни турнир. <br>Вижте кога ще се провежда следващото събитие в таблицата по-долу, или скочете до Ранглистата ни, за да видите кой взима златото!</h5>
-      <br>
-      <h2> Сезон 2021 </h2>
+  <p id="notice"><%= notice %></p>
 
 
-      <table class="table table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Име на турнир:</th>
-            <th scope="col">Начална дата:</th>
-            <th scope="col">Статус:</th>
-            <%- if admin_signed_in? %>
-              <th scope="col"></th>
-            <% end %>
-          </tr>
-        </thead>
-        <tbody>
-          <% @gladiators.each.with_index(1) do |gladiator, i| %>
+
+
+  <div class="limiter">
+    <div class="container">
+      <ul class="responsive-table">
+        
+
+
+        <table class="table table-striped">
+          <thead class="thead-dark">
             <tr>
-              <th scope="row"><%= i %></th>
-              <td><%= link_to gladiator.title, gladiator %></td>
-              <td><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
-              <td><b><%= gladiator.status%></b></td>
-
+              <th scope="col">#</th>
+              <th scope="col">Име на турнир:</th>
+              <th scope="col">Начална дата:</th>
+              <th scope="col">Статус:</th>
               <%- if admin_signed_in? %>
-                <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
+                <th scope="col"></th>
               <% end %>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <br>
+          </thead>
+          <tbody>
+            <% @gladiators.each.with_index(1) do |gladiator, i| %>
+              <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= link_to gladiator.title, gladiator %></td>
+                <td><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
+                <td><b><%= gladiator.status%></b></td>
 
-      <% if current_admin %>
-        <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-success' %></button>
-      <% end %>
+                <%- if admin_signed_in? %>
+                  <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <br>
+
+        <% if current_admin %>
+          <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-success' %></button>
+        <% end %>
+    </div>
   </div>
-</div>
