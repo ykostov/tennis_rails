@@ -26,10 +26,10 @@
   <div class="limiter">
     <div class="container">
       <ul class="responsive-table">
-        
 
 
-        <table class="table table-striped">
+        <div class="table-responsive-xl">
+        <table class="table table-striped table-hover">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
@@ -41,7 +41,7 @@
               <% end %>
             </tr>
           </thead>
-          <tbody>
+          <tbody >
             <% @gladiators.each.with_index(1) do |gladiator, i| %>
               <tr>
                 <th scope="row"><%= i %></th>
@@ -56,6 +56,7 @@
             <% end %>
           </tbody>
         </table>
+        </div>
         <br>
 
         <% if current_admin %>
