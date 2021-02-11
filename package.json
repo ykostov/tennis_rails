@@ -11,6 +11,9 @@
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12",
     "wow": "^0.0.6"
   },
   "version": "0.1.0",
