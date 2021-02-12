@@ -12,7 +12,7 @@
 </div>
 </template>
 <script>
-import player from "./packs/components/player.vue";
+import player from "packs/components/player.vue";
 export default {
 data: function() {
         return {
