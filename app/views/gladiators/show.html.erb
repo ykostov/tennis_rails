@@ -23,20 +23,27 @@
       <h3>
         <caption><%="Players enrolled: #{@gladiator.players.count}" %></caption>
       </h3>
-      <%= form_for @gladiator do |f| %>
+      <%# <%= form_for @gladiator do |f| %>
         <table class="table table-striped">
           <thead class="thead-dark">
             <tr>
               <th>Player:</th>
               <th>Enrolled?</th>
+              <th>Points</th>
             </tr>
           </thead>
           <tbody>
             <%- if admin_signed_in? %>
-              <%= f.collection_check_boxes :player_ids, @players, :id, :name, custom: :switch  do |b| %>
+              <%- @players.each do |player| %>
+              <%# <%= f.collection_check_boxes :player_ids, @players, :id, :name, custom: :switch  do |b| %>
                 <tr>
-                  <td><%= b.label %></td>
-                  <td><%= b.check_box %></td>
+                  <td><%= player.name %></td>
+                  <%= form_for(player, remote: true, html:{class: "class"}) do |f| %>
+                    <%= f.label :player, class: "form-check-label" do %>
+                      <td><%= f.check_box :name, class: "form-check-input ajax-input" %></td>
+                      <td><%= f.text_field :points, class: "form-points-input ajax-input" %></td>
+                    <% end %>
+                  <% end %>
                 </tr>
               <% end %>
             <% end %>
@@ -50,12 +57,12 @@
             <% end %>
           </tbody>
         </table>
-        <%- if admin_signed_in? %>
-          <div class="form-actions">
-            <%= f.submit %>
-          </div>
-        <% end %>
-      <% end %>
+      <%#   <%- if admin_signed_in? %>
+      <%#     <div class="form-actions">
+      <%#       <%= f.submit %>
+      <%#     </div>
+      <%#   <% end %>
+      <%# <% end %>
 
     </div>
   </div>

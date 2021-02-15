@@ -4,6 +4,8 @@ class Player < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :players_in_tour
+  has_many :players_in_tour, dependent: :destroy
   has_many :gladiators, through: :players_in_tour
+
+  attr_accessor :points
 end

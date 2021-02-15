@@ -23,13 +23,12 @@ class Players::RegistrationsController < Devise::RegistrationsController
     end
     build_resource(sign_up_params.merge(password_params))
 
-    resource.save
-    yield resource if block_given?
-    if resource.persisted?
+    if resource.save!
       if resource.active_for_authentication?
         if admin_signed_in?
           set_flash_message! :notice, :"admin_created_player"
-          redirect_to :players
+          render json: { status: :ok, message: 'Success' }
+          # redirect_to :players
         else
           set_flash_message! :notice, :signed_up
           sign_up(resource_name, resource)
@@ -43,7 +42,8 @@ class Players::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       set_minimum_password_length
-      respond_with resource
+      # respond_with resource
+      render json: { json: @player.errors, status: :unprocessable_entity }
     end
   end
 
@@ -75,12 +75,14 @@ class Players::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :nickname, :enabled, :activated])
+    devise_parameter_sanitizer
+      .permit(:sign_up, keys: [:name, :nickname, :email, :enabled, :activated])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :nickname, :enabled, :activated])
+    devise_parameter_sanitizer
+      .permit(:account_update, keys: [:name, :nickname, :email, :enabled, :activated])
   end
 
   # The path used after sign up.
