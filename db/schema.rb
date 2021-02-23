@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_173047) do
+ActiveRecord::Schema.define(version: 2021_02_22_162320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_173047) do
     t.string "nickname"
     t.boolean "enabled"
     t.boolean "activated"
+    t.integer "points"
     t.index ["email"], name: "index_players_on_email", unique: true
     t.index ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
   end
@@ -69,6 +70,16 @@ ActiveRecord::Schema.define(version: 2021_01_28_173047) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["gladiator_id"], name: "index_players_in_tours_on_gladiator_id"
     t.index ["player_id"], name: "index_players_in_tours_on_player_id"
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.bigint "player_id", null: false
+    t.bigint "gladiator_id", null: false
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gladiator_id"], name: "index_points_on_gladiator_id"
+    t.index ["player_id"], name: "index_points_on_player_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -92,5 +103,7 @@ ActiveRecord::Schema.define(version: 2021_01_28_173047) do
   add_foreign_key "gladiators", "admins"
   add_foreign_key "players_in_tours", "gladiators"
   add_foreign_key "players_in_tours", "players"
+  add_foreign_key "points", "gladiators"
+  add_foreign_key "points", "players"
   add_foreign_key "posts", "admins"
 end

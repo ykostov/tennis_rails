@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Players</h1>
-
-<table class="table table-striped">
-  <thead class="thead-dark">
+<div class="container">
+<table class="table table-hover">
+  <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
-      <th scope="col">Nickname</th>
-      <th scope="col">Email</th>
-      <th scope="col">Active?</th>
-      <th colspan="3"></th>
+      <th scope="col">Points</th>
+    
     </tr>
   </thead>
 
@@ -19,13 +17,12 @@
       <tr>
         <th scope="row"><%= i %></th>
         <td><%= link_to player.name, player %></td>
-        <td><%= player.nickname %></td>
-        <td><%= player.email %></td>
         <td><%= player.activated %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 <% if admin_signed_in? %>
