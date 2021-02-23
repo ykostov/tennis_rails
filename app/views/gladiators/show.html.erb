@@ -38,10 +38,14 @@
               <%# <%= f.collection_check_boxes :player_ids, @players, :id, :name, custom: :switch  do |b| %>
                 <tr>
                   <td><%= player.name %></td>
-                  <%= form_for(player, remote: true, html:{class: "class"}) do |f| %>
+                  <%= form_for(player, remote: true, url:  enroll_player_path, params: { tour: @gladiator }, html:{class: "class"}) do |f| %>
                     <%= f.label :player, class: "form-check-label" do %>
-                      <td><%= f.check_box :name, class: "form-check-input ajax-input" %></td>
-                      <td><%= f.text_field :points, class: "form-points-input ajax-input" %></td>
+                      <%= hidden_field_tag "player[tour_id]", "#{@gladiator.id}" %>
+                      <%= hidden_field_tag "player[player_id]", "#{player.id}" %>
+                      <td><%= f.check_box :enrolled,  class: "form-check-input ajax-input", checked: player.enrolled_in?(@gladiator) %></td>
+                      <% if player.enrolled_in?(@gladiator) %>
+                        <td><%= f.text_field :points, class: "form-points-input ajax-input", value: player.points_for(@gladiator) %></td>
+                      <% end %>
                     <% end %>
                   <% end %>
                 </tr>

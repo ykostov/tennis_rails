@@ -6,13 +6,11 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     @players = Player.all
-    render json: @players
   end
 
   # GET /players/1
   # GET /players/1.json
   def show
-    render json: { data: @player, status: 'ok', message: 'Success' }
   end
 
   # GET /players/new
@@ -28,20 +26,29 @@ class PlayersController < ApplicationController
   # POST /players.json
   def create
     @player = Player.new(player_params)
-    if @player.save
-      render json: { status: :ok, message: 'Success' }
-    else
-      render json: { json: @player.errors, status: :unprocessable_entity }
+
+    respond_to do |format|
+      if @player.save
+        format.html { redirect_to @player, notice: 'Player was successfully created.' }
+        format.json { render :show, status: :created, location: @player }
+      else
+        format.html { render :new }
+        format.json { render json: @player.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   # PATCH/PUT /players/1
   # PATCH/PUT /players/1.json
   def update
-    if @player.update(player_params)
-      render json: { status: :ok, message: 'Ok'}
-    else
-      render json: { status: :unprocessable_entity, json: @player.errors }
+    respond_to do |format|
+      if @player.update(player_params)
+        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
+        format.json { render :show, status: :created, location: @player }
+      else
+        format.html { render :edit }
+        format.json { render json: @player.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -49,9 +56,10 @@ class PlayersController < ApplicationController
   # DELETE /players/1.json
   def destroy
     if @player.destroy
-      render json: { json: 'Player was successfuly destroyed' }
-    else
-      render json: { json: @player.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        format.html { redirect_to players_url, notice: 'Player was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

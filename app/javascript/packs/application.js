@@ -22,6 +22,12 @@ document.addEventListener("turbolinks:load", function() {
   })
 })
 
+document.addEventListener("turbolinks:load", function() {
+  $("body").on("change", ".ajax-input", function() {
+    Rails.fire(this.form, "submit");
+  });
+});
+
 import "@fortawesome/fontawesome-free/css/all"
 
 Turbolinks.start()
