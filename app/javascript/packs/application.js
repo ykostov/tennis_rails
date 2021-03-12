@@ -9,7 +9,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-import("new/main.js")
+import("packs/main.js")
 
 import("packs/active.js")
 import("packs/plugins.js")
