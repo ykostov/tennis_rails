@@ -29,9 +29,10 @@
 <table class = "table table-striped">
   <thead class = "thead-light">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Start date</th>
+      <th>#</th>
+      <th>Заглавие</th>
+      <th>Начална дата</th>
+      <th>Статус</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -39,12 +40,11 @@
   <tbody>
     <% @months.each do |month| %>
       <tr>
+        <th scope="row"><%# i %></th>
         <td><%= month.title %></td>
-        <td><%= month.description %></td>
         <td><%= month.start_date %></td>
-        <td><%= link_to 'Show', month %></td>
-        <td><%= link_to 'Edit', edit_month_path(month) %></td>
-        <td><%= link_to 'Destroy', month, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Завършил</td>
+        <td><%= link_to 'Destroy', month, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
