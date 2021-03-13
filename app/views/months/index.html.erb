@@ -43,7 +43,7 @@
         <th scope="row"><%# i %></th>
         <td><%= month.title %></td>
         <td><%= month.start_date %></td>
-        <td>Завършил</td>
+        <td><%= month.status%></td>
         <td><%= link_to 'Destroy', month, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
