@@ -52,7 +52,7 @@
           <h4>Админ достъп</h4>
           <p></p>
 
-          <%= if current_admin %>
+          <%- if current_admin %>
             <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
           <% else %>
             <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
