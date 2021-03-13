@@ -41,23 +41,22 @@
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Социални мрежи</h4>
-          <p>Център за тенис на маса гр. Бургас</p>
+          <h4>Социални Мрежи</h4>
           <div class="social-links mt-3">
             <a href="#" class="twitter"><i class="fab fa-facebook"></i></a>
 
           </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Админ достъп</h4>
+          <p></p>
+
+          <%- if current_admin %>
+            <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
+           <% end %>
         </div>
 
       </div>
@@ -65,11 +64,7 @@
   </div>
 
   <div class="container py-4">
-    <%- if current_admin %>
-      <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
-    <% else %>
-      <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
-     <% end %>
+
     <div class="copyright">
       &copy; Авторско Право <strong><span>TennisBurgas.com</span></strong>. Всички Права Запазени!
       <br>
