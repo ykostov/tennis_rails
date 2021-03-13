@@ -38,9 +38,9 @@
   </thead>
 
   <tbody>
-    <% @months.each do |month| %>
+    <% @months.each.with_index(1) do |month, i| %>
       <tr>
-        <th scope="row"><%# i %></th>
+        <th scope="row"><%= i %></th>
         <td><%= month.title %></td>
         <td><%= month.start_date %></td>
         <td><%= month.status%></td>
