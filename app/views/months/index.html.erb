@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Months</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @months.each do |month| %>
+      <tr>
+        <td><%= month.title %></td>
+        <td><%= month.description %></td>
+        <td><%= month.start_date %></td>
+        <td><%= link_to 'Show', month %></td>
+        <td><%= link_to 'Edit', edit_month_path(month) %></td>
+        <td><%= link_to 'Destroy', month, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Month', new_month_path %>
