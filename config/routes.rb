@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
   get '/ranklist', to: "pages#ranklist"
   get '/old', to: "pages#home"
-  root to: 'pages#index'
+  root to: 'pages#home'
 end
