@@ -30,10 +30,10 @@
       <table class="table table-striped">
         <thead class="thead-light">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Име на турнир:</th>
-            <th scope="col">Начална дата:</th>
-            <th scope="col">Статус:</th>
+            <th scope="col" class= "text-center">#</th>
+            <th scope="col" class= "text-center">Име на турнир:</th>
+            <th scope="col" class= "text-center">Начална дата:</th>
+            <th scope="col" class= "text-center">Статус:</th>
             <%- if admin_signed_in? %>
               <th scope="col"></th>
             <% end %>
@@ -42,10 +42,10 @@
         <tbody>
           <% @gladiators.each.with_index(1) do |gladiator, i| %>
             <tr>
-              <th scope="row"><%= i %></th>
-              <td><%= link_to gladiator.title, gladiator %></td>
-              <td><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
-              <td><b><%= gladiator.status%></b></td>
+              <th scope="row" class= "text-center"><%= i %></th>
+              <td class= "text-center"><%= link_to gladiator.title, gladiator %></td>
+              <td class= "text-center"><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
+              <td class= "text-center"><b><%= gladiator.status%></b></td>
 
               <%- if admin_signed_in? %>
                 <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
@@ -58,7 +58,8 @@
       <br>
 
       <% if current_admin %>
-        <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-success' %></button>
+        <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-secondary' %>
       <% end %>
       </div>
+      <br>
   </main>

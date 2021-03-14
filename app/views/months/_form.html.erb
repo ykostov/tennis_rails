@@ -1,3 +1,18 @@
+<section class="breadcrumbs">
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Месечен Турнир</h2>
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Month</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+<div class="container">
+  <br>
 <%= form_with(model: month) do |form| %>
   <% if month.errors.any? %>
     <div id="error_explanation">
@@ -13,12 +28,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -26,7 +41,8 @@
     <%= form.datetime_select :start_date %>
   </div>
 
-  <div class="actions">
+  <div class="actions ">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
