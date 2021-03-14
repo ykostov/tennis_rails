@@ -1,41 +1,39 @@
-<section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(<%= asset_path 'tour2.jpg' %>);">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-12">
-        <div class="breadcrumb-content">
-          <h2>Лига "Гладиатори"</h2>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"> <%=link_to 'Начало', root_path %></li>
-              <li class="breadcrumb-item active" aria-current="page">Gladiators</li>
-            </ol>
-          </nav>
-        </div>
+<br>
+
+<main id="main" data-aos="fade-up">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Лига "Гладиатори"</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Gladiators</li>
+        </ol>
       </div>
+
     </div>
-  </div>
-</section>
+  </section><!-- End Breadcrumbs -->
 
-<p id="notice"><%= notice %></p>
+  <section class="inner-page">
+    <div class="container">
+      <p>
+        Сезон 2021
+      </p>
+    </div>
+  </section>
 
-
-
-
-<div class="limiter">
   <div class="container">
-    <ul class="responsive-table">
-      <h5 class="gladiators-info">Лига "Гладитори" се провежда всеки уикенд на всяка седмица, с изключение на тази с "Месечния" ни турнир. <br>Вижте кога ще се провежда следващото събитие в таблицата по-долу, или скочете до Ранглистата ни, за да видите кой взима златото!</h5>
-      <br>
-      <h2> Сезон 2021 </h2>
-
 
       <table class="table table-striped">
-        <thead class="thead-dark">
+        <thead class="thead-light">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Име на турнир:</th>
-            <th scope="col">Начална дата:</th>
-            <th scope="col">Статус:</th>
+            <th scope="col" class= "text-center">#</th>
+            <th scope="col" class= "text-center">Име на турнир:</th>
+            <th scope="col" class= "text-center">Начална дата:</th>
+            <th scope="col" class= "text-center">Статус:</th>
             <%- if admin_signed_in? %>
               <th scope="col"></th>
             <% end %>
@@ -44,10 +42,10 @@
         <tbody>
           <% @gladiators.each.with_index(1) do |gladiator, i| %>
             <tr>
-              <th scope="row"><%= i %></th>
-              <td><%= link_to gladiator.title, gladiator %></td>
-              <td><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
-              <td><b><%= gladiator.status%></b></td>
+              <th scope="row" class= "text-center"><%= i %></th>
+              <td class= "text-center"><%= link_to gladiator.title, gladiator %></td>
+              <td class= "text-center"><%= gladiator.start_date.strftime('%d-%b-%Y  | %H:%Mч.') %></td>
+              <td class= "text-center"><b><%= gladiator.status%></b></td>
 
               <%- if admin_signed_in? %>
                 <td><%= link_to 'Destroy', gladiator, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></td>
@@ -56,10 +54,12 @@
           <% end %>
         </tbody>
       </table>
+
       <br>
 
       <% if current_admin %>
-        <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-success' %></button>
+        <%= link_to 'Създай нов гладиатор', new_gladiator_path, class: 'btn btn-secondary' %>
       <% end %>
-  </div>
-</div>
+      </div>
+      <br>
+  </main>

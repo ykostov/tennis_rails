@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'footer', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# stylesheet_link_tag 'footer', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
   </head>
@@ -20,6 +20,6 @@
     <%= yield %>
 
     <%= render 'layouts/footer' %>
-    <%= render 'layouts/cookies' %>
+    <%# render 'layouts/cookies' %>
     </body>
 </html>

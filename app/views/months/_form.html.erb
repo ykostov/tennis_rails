@@ -1,0 +1,48 @@
+<section class="breadcrumbs">
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Месечен Турнир</h2>
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Month</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+<div class="container">
+  <br>
+<%= form_with(model: month) do |form| %>
+  <% if month.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(month.errors.count, "error") %> prohibited this month from being saved:</h2>
+
+      <ul>
+        <% month.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date %>
+  </div>
+
+  <div class="actions ">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

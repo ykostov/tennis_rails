@@ -1,0 +1,57 @@
+<br>
+
+<main id="main" data-aos="fade-up">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Месечен Турнир</h2>
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Month</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section class="inner-page">
+    <div class="container">
+      <p>
+        Сезон 2021
+      </p>
+    </div>
+  </section>
+
+<div class = "container">
+<table class = "table table-striped">
+  <thead class = "thead-light">
+    <tr>
+      <th class= "text-center">#</th>
+      <th class= "text-center">Заглавие</th>
+      <th class= "text-center">Начална дата</th>
+      <th class= "text-center">Статус</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @months.each.with_index(1) do |month, i| %>
+      <tr>
+        <th scope="row" class= "text-center"><%= i %></th>
+        <td class= "text-center"><%= month.title %></td>
+        <td class= "text-center"><%= month.start_date %></td>
+        <td class= "text-center"><%= month.status%></td>
+        <td><%= link_to 'Destroy', month, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Month', new_month_path, class: "btn btn-secondary" %>
+
+</div>

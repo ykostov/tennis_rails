@@ -1,62 +1,86 @@
+<footer id="footer">
 
-<section class="newsletter-area section-padding-100 bg-img jarallax" style="background-image: url(<%= asset_path 'tour2.jpg' %>);">
-
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-10 col-lg-8">
-                    <div class="nl-content text-center">
-                        <h2>Център за Тенис на Маса <br> град Бургас</h2>
-                        <!-- <form action="#" method="post">
-                            <input type="email" name="nl-email" id="nlemail" placeholder="Your e-mail">
-                            <button type="submit">Subscribe</button>
-                        </form> -->
-                        <p>Всички права запазени!</p>
-
-
-                    </div>
-                </div>
-            </div>
+  <div class="footer-newsletter">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <h4>Реклама</h4>
+          <!-- <p></p> -->
+          <!-- <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form> -->
         </div>
-    </section>
-    <!-- ##### Newsletter Area End ###### -->
+      </div>
+    </div>
+  </div>
 
-    <!-- ##### Footer Area Start ##### -->
-    <footer class="footer-area section-padding-100-0">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
 
-
-        <!-- Copywrite Area -->
-        <div class="copywrite-area">
-
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-
-
-                      <%- if current_admin %>
-                      <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
-                      <% else %>
-                      <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
-                      <% end %>
-
-                        <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
-                            <!-- Footer Logo -->
-                            <!-- <a href="index.html" class="footer&#45;logo"><img src="img/core&#45;img/logo.png" alt=""></a> -->
-
-                            <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="https://bratac.net" target="_blank">©2021 Copyright Bratac | All Rights Reserved!</a></p>
-
-                        </div>
-                        <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
-                            <!-- Footer Logo -->
-                            <!-- <a href="index.html" class="footer&#45;logo"><img src="img/core&#45;img/logo.png" alt=""></a> -->
-
-                            <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="https://bratac.net" target="_blank"> Web Design and Code by Bratac.net</a></p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3><span>Tennis</span>Burgas<span>.com</span></h3>
+          <p class = "text-center">
+            Янко Комитов №16, до Каулфланд <br>
+            Бургас, България<br>
+            <br>
+            <strong>Phone:</strong> +359 886 460 005<br>
+            <strong>Email:</strong> contact@tennisburgas.com<br>
+          </p>
         </div>
-    </footer>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Навигация</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/#hero">Начало</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/#about">За нас</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/#tours">Турнири</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/gladiators">Лига Гладиатори</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/months">Месечен Турнир</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/#contact">Контакти</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Социални Мрежи</h4>
+          <div class="social-links mt-3">
+            <a href="#" class="twitter"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-github"></i></a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Админ достъп</h4>
+          <p></p>
+
+          <%- if current_admin %>
+            <%= link_to "Log out", destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
+          <% else %>
+            <%= link_to 'Логин', new_admin_session_path, class: 'btn btn-success'%>
+           <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+
+    <div class="copyright">
+      &copy; Авторско Право <strong><span>TennisBurgas.com</span></strong>. Всички Права Запазени!
+      <br>
+      &copy; Copyright <strong><span>TennisBurgas.com</span></strong>. All Rights Reserved!
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
+      <br>
+      FullStack development by <a href="https://bootstrapmade.com/">BraTac.net</a>
+    </div>
+  </div>
+</footer>

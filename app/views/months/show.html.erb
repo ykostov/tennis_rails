@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<section class="breadcrumbs">
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h2>Лига "Гладиатори"</h2>
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Gladiators</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+<p>
+  <strong>Title:</strong>
+  <%= @month.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @month.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @month.start_date %>
+</p>
+
+<%= link_to 'Edit', edit_month_path(@month) %> |
+<%= link_to 'Back', months_path %>
