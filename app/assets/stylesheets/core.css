@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Pangolin', cursive;
   color: #444444;
 }
 
@@ -23,7 +23,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pangolin', cursive;
 }
 
 /*--------------------------------------------------------------
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   font-weight: 600;
   letter-spacing: 0.8px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Pangolin', cursive;
 }
 
 #header .logo a {
@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
   font-weight: 600;
   padding: 0 3px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Pangolin', cursive;
 }
 
 .nav-menu > ul > li > a:before {
@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu .drop-down > a:after {
   content: "\ea99";
-  font-family: IcoFont;
+  font-family: 'Pangolin', cursive;
   padding-left: 5px;
 }
 
@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu .drop-down .drop-down > a:after {
   content: "\eaa0";
-  font-family: IcoFont;
+  font-family: 'Pangolin', cursive;
   position: absolute;
   right: 15px;
 }
@@ -393,7 +393,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav .drop-down > a:after {
   content: "\ea99";
-  font-family: IcoFont;
+  font-family: 'Pangolin', cursive;
   padding-left: 10px;
   position: absolute;
   right: 15px;
@@ -480,7 +480,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 56px;
   color: #222222;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Pangolin', cursive;
 }
 
 #hero h1 span {
@@ -495,7 +495,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pangolin', cursive;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 14px;
@@ -809,7 +809,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Pangolin', cursive;
   color: #222222;
 }
 
@@ -867,7 +867,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pangolin', cursive;
   font-size: 14px;
 }
 
@@ -1362,7 +1362,7 @@ section {
   font-size: 36px;
   color: #106eea;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Pangolin', cursive;
   margin-bottom: 20px;
 }
 
@@ -1418,7 +1418,7 @@ section {
   transition: none;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pangolin', cursive;
   font-weight: 600;
   transition: 0.3s;
 }
@@ -1720,7 +1720,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Pangolin', cursive;
   color: #777777;
 }
 
