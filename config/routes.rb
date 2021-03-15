@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :gladiators
   resources :competitions
   resources :posts
-  resources :months
+  # resources :months
   devise_for :admins
   get 'pages/home'
   get 'pages/about'
