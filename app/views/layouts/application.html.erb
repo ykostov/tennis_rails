@@ -11,11 +11,12 @@
     <%# stylesheet_link_tag 'footer', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
+    <%= render 'layouts/analytics' %>
+    <%= render 'layouts/adsense' %>
   </head>
 
   <body>
     <%= render 'layouts/navbar' %>
-    <%= render 'layouts/analytics' %>
     <%# <%= render 'layouts/alerts' %>
 
     <%= yield %>
