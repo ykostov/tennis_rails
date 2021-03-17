@@ -296,7 +296,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down > a:after {
-  content: "\ea99";
+  /* content: "\ea99"; */
   font-family: 'Pangolin', cursive;
   padding-left: 5px;
 }
