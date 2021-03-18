@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :months
+  # resources :months
   devise_for :players, controllers: {
     registrations: 'players/registrations'
   }
